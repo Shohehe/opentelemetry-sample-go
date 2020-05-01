@@ -40,19 +40,20 @@ func main() {
 	child.End()
 	span.End()
 
-	_ = tracer.WithSpan(ctx, "foo",
-		func(ctx context.Context) error {
-			tracer.WithSpan(ctx, "bar",
-				func(ctx context.Context) error {
-					tracer.WithSpan(ctx, "baz",
-						func(ctx context.Context) error {
-							return nil
-						},
-					)
-					return nil
-				},
-			)
-			return nil
-		},
-	)
+	// 別の書き方
+	//_ = tracer.WithSpan(ctx, "foo",
+	//	func(ctx context.Context) error {
+	//		tracer.WithSpan(ctx, "bar",
+	//			func(ctx context.Context) error {
+	//				tracer.WithSpan(ctx, "baz",
+	//					func(ctx context.Context) error {
+	//						return nil
+	//					},
+	//				)
+	//				return nil
+	//			},
+	//		)
+	//		return nil
+	//	},
+	//)
 }

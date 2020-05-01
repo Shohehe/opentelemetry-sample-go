@@ -29,7 +29,7 @@ func initTracer() {
 			ServiceName: "client",
 			Tags: []core.KeyValue{
 				key.String("exporter", "jaeger"),
-				key.Float64("float", 312.23),
+				key.String("type", "http"),
 			},
 		}),
 	)
